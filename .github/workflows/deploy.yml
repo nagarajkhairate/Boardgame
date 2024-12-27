@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'  # Setup Java 11 (or any version your project uses)
-        distribution: 'adoptopenjdk'  # Specify the Java distribution (e.g., adoptopenjdk, zulu, etc.)
+        distribution: 'temurin'  # Use the temurin distribution (formerly adoptopenjdk)
 
     - name: Build the Java project using Maven
       run: |
