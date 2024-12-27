@@ -19,9 +19,12 @@ jobs:
         java-version: '11'  # Setup Java 11 (or any version your project uses)
         distribution: 'temurin'  # Use the temurin distribution (formerly adoptopenjdk)
 
+    - name: Grant execute permissions to mvnw
+      run: chmod +x ./mvnw  # Ensure the Maven wrapper is executable
+
     - name: Build the Java project using Maven
       run: |
-        ./mvnw clean install  # This assumes you're using the Maven wrapper
+        ./mvnw clean install  # Run Maven build using the wrapper
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2  # Setup Docker Buildx for building multi-platform images
